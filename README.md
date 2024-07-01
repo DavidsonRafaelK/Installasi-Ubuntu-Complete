@@ -15,20 +15,18 @@
     * [**Cadangkan Data Anda**](#cadangkan-data-anda)
     * [**Unduh Ubuntu ISO**](#unduh-ubuntu-iso)
     * [**Buat USB Bootable**](#buat-usb-bootable)
+        * [**Buat USB Bootable dengan Etcher**](#buat-usb-bootable-dengan-etcher)
+            * [**Unduh Etcher**](#unduh-etcher)
+            * [**Instal Etcher**](#instal-etcher)
+            * [**Siapkan USB Drive**](#siapkan-usb-drive)
+            * [**Buat USB Bootable dengan Etcher**](#buat-usb-bootable-dengan-etcher)
+            * [**Boot dari USB Drive**](#boot-dari-usb-drive)
+            * [**Ringkasan Langkah**](#ringkasan-langkah)
     * [**Akses BIOS/UEFI**](#akses-biosuefi)
     * [**Koneksi Internet**](#koneksi-internet)
     * [**Rencanakan Partisi (jika Dual Booting)**](#rencanakan-partisi-jika-dual-booting)
     * [**Langkah-langkah Persiapan USB Ubuntu**](#langkah-langkah-persiapan-usb-ubuntu)
     * [**Daftar Periksa**](#daftar-periksa)
-
-* [**Buat USB Bootable dengan Etcher**](#buat-usb-bootable-dengan-etcher)
-    * [**Unduh Etcher**](#unduh-etcher)
-    * [**Instal Etcher**](#instal-etcher)
-    * [**Siapkan USB Drive**](#siapkan-usb-drive)
-    * [**Buat USB Bootable dengan Etcher**](#buat-usb-bootable-dengan-etcher)
-    * [**Boot dari USB Drive**](#boot-dari-usb-drive)
-    * [**Ringkasan Langkah**](#ringkasan-langkah)
-
 * [**Memecahkan Masalah Kesalahan Umum**](#memecahkan-masalah-kesalahan-umum)
     * [**Masalah Boot Order**](#masalah-boot-order)
     * [**Instalasi Macet atau Gagal Dimulai**](#instalasi-macet-atau-gagal-dimulai)
@@ -36,6 +34,7 @@
         * [**Gunakan GParted**](#gunakan-gparted)
     * [**Masalah Konektivitas Jaringan**](#masalah-konektivitas-jaringan)
     * [**Instalasi GRUB Gagal**](#instalasi-grub-gagal)
+        * [**Langkah-langkah Troubleshooting GRUB**](#langkah-langkah-troubleshooting-grub)
     * [**Ringkasan Kesalahan Umum dan Solusi**](#ringkasan-kesalahan-umum-dan-solusi)
 
 ##  Instalasi Ubuntu
@@ -52,7 +51,6 @@
     * [**Selesaikan**](#selesaikan)
     * [**Ringkasan Partisi Manual**](#ringkasan-partisi-manual)
     * [**Penjelasan Singkat Partisi**](#penjelasan-singkat-partisi)
-
 * [**Pengaturan Awal dan Konfigurasi**](#pengaturan-awal-dan-konfigurasi)
     * [**Instal Perangkat Lunak Esensial**](#instal-perangkat-lunak-esensial)
     * [**Konfigurasi Desktop Environment**](#konfigurasi-desktop-environment)
@@ -64,7 +62,6 @@
     * [**Atur Printer Anda**](#atur-printer-anda)
     * [**Buat Pengguna Tambahan**](#buat-pengguna-tambahan)
     * [**Atur Backup dan Recovery**](#atur-backup-dan-recovery)
-
 * [**Dual Booting dengan Windows**](#dual-booting-dengan-windows)
     * [**Buat Partisi Terpisah untuk Ubuntu**](#buat-partisi-terpisah-untuk-ubuntu)
         * [**Gunakan Windows Disk Management**](#gunakan-windows-disk-management)
@@ -72,7 +69,6 @@
         * [**Ikuti Panduan Instalasi**](#ikuti-panduan-instalasi)
     * [**Pilihan Boot**](#pilihan-boot)
         * [**Konfigurasi GRUB**](#konfigurasi-grub)
-
 * [**Instalasi Ubuntu Server**](#instalasi-ubuntu-server)
     * [**Unduh Ubuntu Server ISO**](#unduh-ubuntu-server-iso)
         * [**Kunjungi Situs Web Ubuntu**](#kunjungi-situs-web-ubuntu)
@@ -82,10 +78,32 @@
         * [**Ikuti Langkah-langkah Booting**](#ikuti-langkah-langkah-booting)
     * [**Konfigurasi Pengaturan Server**](#konfigurasi-pengaturan-server)
         * [**Ikuti Panduan Instalasi**](#ikuti-panduan-instalasi)
+        * [**Contoh Konfigurasi Server**](#contoh-konfigurasi-server)
+            * [**Server Web dengan Apache**](#server-web-dengan-apache)
+            * [**Server Database dengan MySQL**](#server-database-dengan-mysql)
+            * [**Server Email dengan Postfix**](#server-email-dengan-postfix)
+* [**Instalasi pada Platform Lain**](#instalasi-pada-platform-lain)
+    * [**Instalasi pada Mesin Virtual**](#instalasi-pada-mesin-virtual)
+        * [**Instalasi dengan VirtualBox**](#instalasi-dengan-virtualbox)
+            * [**Unduh dan Instal VirtualBox**](#unduh-dan-instal-virtualbox)
+            * [**Buat Mesin Virtual Baru**](#buat-mesin-virtual-baru)
+            * [**Pilih Gambar Ubuntu**](#pilih-gambar-ubuntu)
+            * [**Mulai Mesin Virtual**](#mulai-mesin-virtual)
+            * [**Konfigurasi Tambahan (opsional)**](#konfigurasi-tambahan-opsional)
+        * [**Instalasi dengan VMware Workstation**](#instalasi-dengan-vmware-workstation)
+            * [**Unduh dan Instal VMware Workstation**](#unduh-dan-instal-vmware-workstation)
+            * [**Buat Mesin Virtual Baru**](#buat-mesin-virtual-baru)
+            * [**Pilih Gambar Ubuntu**](#pilih-gambar-ubuntu)
+            * [**Mulai Mesin Virtual**](#mulai-mesin-virtual)
+    * [**Instalasi pada Raspberry Pi**](#instalasi-pada-raspberry-pi)
+        * [**Unduh Gambar Raspberry Pi OS**](#unduh-gambar-raspberry-pi-os)
+        * [**Buat Image SD Card**](#buat-image-sd-card)
+        * [**Boot Raspberry Pi**](#boot-raspberry-pi)
 
 ##  Penggunaan Ubuntu
 
 * [**Terminal dan Command Line**](#terminal-dan-command-line)
+    * [**Perintah Dasar Terminal**](#perintah-dasar-terminal)
 * [**Software Manager**](#software-manager)
     * [**Menggunakan GNOME Software**](#menggunakan-gnome-software)
 * [**Apt-get Package Manager**](#apt-get-package-manager)
@@ -106,33 +124,17 @@
         * [**Mulai Ulang Sistem**](#mulai-ulang-sistem)
     * [**Solusi untuk Masalah Upgrade**](#solusi-untuk-masalah-upgrade)
         * [**Bersihkan Cache Paket**](#bersihkan-cache-paket)
-        * [**Gunakan Mode Recovery**](#gunakan-mode-recovery)
-
-##  Instalasi pada Platform Lain
-
-* [**Instalasi pada Mesin Virtual**](#instalasi-pada-mesin-virtual)
-    * [**Instalasi dengan VirtualBox**](#instalasi-dengan-virtualbox)
-        * [**Unduh dan Instal VirtualBox**](#unduh-dan-instal-virtualbox)
-        * [**Buat Mesin Virtual Baru**](#buat-mesin-virtual-baru)
-        * [**Pilih Gambar Ubuntu**](#pilih-gambar-ubuntu)
-        * [**Mulai Mesin Virtual**](#mulai-mesin-virtual)
-    * [**Instalasi dengan VMware Workstation**](#instalasi-dengan-vmware-workstation)
-        * [**Unduh dan Instal VMware Workstation**](#unduh-dan-instal-vmware-workstation)
-        * [**Buat Mesin Virtual Baru**](#buat-mesin-virtual-baru)
-        * [**Pilih Gambar Ubuntu**](#pilih-gambar-ubuntu)
-        * [**Mulai Mesin Virtual**](#mulai-mesin-virtual)
-
-* [**Instalasi pada Raspberry Pi**](#instalasi-pada-raspberry-pi)
-    * [**Unduh Gambar Raspberry Pi OS**](#unduh-gambar-raspberry-pi-os)
-    * [**Buat Image SD Card**](#buat-image-sd-card)
-    * [**Boot Raspberry Pi**](#boot-raspberry-pi)
+        * **[Gunakan Mode Recovery](#gunakan-mode-recovery)
+            * **Langkah-langkah Memasuki Mode Recovery**](#langkah-langkah-memasuki-mode-recovery)
 
 ##  Sumber Daya dan Dukungan
 
 * [**Komunitas Ubuntu**](#komunitas-ubuntu)
 * [**Mendapatkan Bantuan dan Dukungan**](#mendapatkan-bantuan-dan-dukungan)
 
+
 ---
+
 ## Apa itu Ubuntu?
 
 **Ubuntu** adalah distribusi Linux yang populer dan ramah pengguna yang dikenal karena stabilitasnya, kemudahan penggunaannya, dan dukungan komunitas yang kuat.
@@ -190,6 +192,61 @@ Untuk menginstal Ubuntu, Anda perlu membuat USB bootable. Anda dapat menggunakan
 - **Etcher** (tersedia untuk Windows, macOS, dan Linux)
 - **UNetbootin** (tersedia untuk Windows, macOS, dan Linux)
 
+#### Buat USB Bootable dengan Etcher
+
+##### Unduh Etcher
+
+1. Kunjungi [situs web Etcher](https://www.balena.io/etcher/).
+2. Unduh versi yang sesuai untuk sistem operasi Anda (Windows, macOS, atau Linux).
+
+##### Instal Etcher
+
+1. **Windows**:
+   - Jalankan file `.exe` yang diunduh dan ikuti petunjuk instalasi.
+2. **macOS**:
+   - Buka file `.dmg` yang diunduh dan seret Etcher ke folder Aplikasi.
+3. **Linux**:
+   - Ekstrak file `.zip` yang diunduh dan jalankan file Etcher AppImage.
+
+##### Siapkan USB Drive
+
+1. Masukkan USB drive (setidaknya 4 GB) ke komputer Anda. Pastikan tidak ada data penting di dalamnya, karena akan diformat selama proses ini.
+
+##### Buat USB Bootable dengan Etcher
+
+1. Buka Etcher.
+
+2. **Pilih Gambar**:
+   - Klik tombol "Flash from file".
+   - Telusuri dan pilih file ISO Ubuntu yang diunduh.
+
+3. **Pilih Target**:
+   - Klik tombol "Select target".
+   - Pilih USB drive Anda dari daftar drive yang tersedia.
+
+4. **Flash**:
+   - Klik tombol "Flash!".
+   - Etcher akan mulai membuat USB bootable. Proses ini mungkin memakan waktu beberapa menit.
+
+5. **Validasi**:
+   - Setelah flashing, Etcher akan memvalidasi USB drive untuk memastikan prosesnya berhasil.
+
+##### Boot dari USB Drive
+
+1. Nyalakan kembali komputer Anda.
+2. Akses pengaturan BIOS/UEFI dengan menekan tombol yang sesuai selama startup (biasanya `F2`, `F12`, `Esc`, atau `Del`).
+3. Ubah urutan boot untuk memprioritaskan boot dari USB drive.
+4. Simpan perubahan dan keluar dari pengaturan BIOS/UEFI.
+5. Komputer Anda sekarang seharusnya boot dari USB drive, dan Anda akan melihat layar instalasi Ubuntu.
+
+##### Ringkasan Langkah
+
+1. Unduh dan instal Etcher.
+2. Siapkan USB drive.
+3. Unduh Ubuntu ISO.
+4. Gunakan Etcher untuk membuat USB bootable.
+5. Boot dari USB drive untuk memulai proses instalasi Ubuntu.
+
 ### Akses BIOS/UEFI
 
 - Anda perlu mengakses pengaturan BIOS atau UEFI komputer Anda untuk mengubah urutan boot, sehingga sistem Anda dapat boot dari USB drive.
@@ -223,68 +280,6 @@ Untuk menginstal Ubuntu, Anda perlu membuat USB bootable. Anda dapat menggunakan
 - [ ] Koneksi internet tersedia.
 - [ ] Pengaturan BIOS/UEFI dapat diakses.
 - [ ] Rencana partisi sudah siap (jika dual booting).
-
----
-
-## Buat USB Bootable dengan Etcher
-
-### Unduh Etcher
-
-1. Kunjungi [situs web Etcher](https://www.balena.io/etcher/).
-2. Unduh versi yang sesuai untuk sistem operasi Anda (Windows, macOS, atau Linux).
-
-### Instal Etcher
-
-1. **Windows**:
-   - Jalankan file `.exe` yang diunduh dan ikuti petunjuk instalasi.
-2. **macOS**:
-   - Buka file `.dmg` yang diunduh dan seret Etcher ke folder Aplikasi.
-3. **Linux**:
-   - Ekstrak file `.zip` yang diunduh dan jalankan file Etcher AppImage.
-
-### Siapkan USB Drive
-
-1. Masukkan USB drive (setidaknya 4 GB) ke komputer Anda. Pastikan tidak ada data penting di dalamnya, karena akan diformat selama proses ini.
-
-### Unduh Ubuntu ISO
-
-1. Kunjungi [halaman unduhan Ubuntu](https://ubuntu.com/download).
-2. Unduh file ISO Ubuntu Desktop terbaru.
-
-### Buat USB Bootable dengan Etcher
-
-1. Buka Etcher.
-
-2. **Pilih Gambar**:
-   - Klik tombol "Flash from file".
-   - Telusuri dan pilih file ISO Ubuntu yang diunduh.
-
-3. **Pilih Target**:
-   - Klik tombol "Select target".
-   - Pilih USB drive Anda dari daftar drive yang tersedia.
-
-4. **Flash**:
-   - Klik tombol "Flash!".
-   - Etcher akan mulai membuat USB bootable. Proses ini mungkin memakan waktu beberapa menit.
-
-5. **Validasi**:
-   - Setelah flashing, Etcher akan memvalidasi USB drive untuk memastikan prosesnya berhasil.
-
-### Boot dari USB Drive
-
-1. Nyalakan kembali komputer Anda.
-2. Akses pengaturan BIOS/UEFI dengan menekan tombol yang sesuai selama startup (biasanya `F2`, `F12`, `Esc`, atau `Del`).
-3. Ubah urutan boot untuk memprioritaskan boot dari USB drive.
-4. Simpan perubahan dan keluar dari pengaturan BIOS/UEFI.
-5. Komputer Anda sekarang seharusnya boot dari USB drive, dan Anda akan melihat layar instalasi Ubuntu.
-
-### Ringkasan Langkah
-
-1. Unduh dan instal Etcher.
-2. Siapkan USB drive.
-3. Unduh Ubuntu ISO.
-4. Gunakan Etcher untuk membuat USB bootable.
-5. Boot dari USB drive untuk memulai proses instalasi Ubuntu.
 
 ---
 
@@ -408,6 +403,15 @@ Untuk menginstal Ubuntu, Anda perlu membuat USB bootable. Anda dapat menggunakan
 2. **Periksa Mode Boot**:
    - Pastikan BIOS/UEFI diatur ke mode yang benar (UEFI atau Legacy) yang sesuai dengan mode instalasi Ubuntu.
 
+#### **Langkah-langkah Troubleshooting GRUB**
+
+1. **Periksa Log Instalasi:** Lihat log instalasi untuk petunjuk lebih lanjut tentang kesalahan yang terjadi.
+2. **Gunakan Perintah `boot-repair`:** Jalankan perintah `boot-repair` dari sesi live untuk memperbaiki masalah boot yang umum.
+3. **Buat Ulang USB Bootable:** Buat ulang USB bootable dan coba instalasi lagi.
+4. **Pastikan Partisi Boot Terpasang dengan Benar:** Pastikan partisi boot (biasanya `/boot` atau `/boot/efi`) terpasang dengan benar selama proses instalasi GRUB.
+5. **Nonaktifkan Secure Boot:** Nonaktifkan Secure Boot di pengaturan BIOS/UEFI jika diaktifkan.
+6. **Reset BIOS/UEFI ke Pengaturan Default:** Reset pengaturan BIOS/UEFI ke pengaturan default dan coba instalasi lagi.
+
 ### Ringkasan Kesalahan Umum dan Solusi
 
 1. **Masalah Boot Order**:
@@ -423,7 +427,7 @@ Untuk menginstal Ubuntu, Anda perlu membuat USB bootable. Anda dapat menggunakan
    - Gunakan koneksi kabel, instal driver pihak ketiga, konfigurasi jaringan secara manual.
 
 5. **Instalasi GRUB Gagal**:
-   - Instal GRUB secara manual, pastikan mode boot yang benar di BIOS/UEFI.
+   - Instal GRUB secara manual, pastikan mode boot yang benar di BIOS/UEFI, dan ikuti langkah-langkah troubleshooting GRUB.
 
 ---
 
@@ -634,6 +638,17 @@ Setelah menginstal Ubuntu, Anda perlu melakukan beberapa tugas pengaturan awal d
   - Buka terminal dengan menekan `Ctrl+Alt+T`.
   - Gunakan perintah dasar seperti `ls`, `cd`, `cp`, `mv`, `rm` untuk navigasi dan manipulasi file.
 
+#### **Perintah Dasar Terminal**
+
+- **`ls`**: Menampilkan daftar file dan direktori.
+- **`cd`**: Mengubah direktori.
+- **`mkdir`**: Membuat direktori baru.
+- **`cp`**: Menyalin file.
+- **`mv`**: Memindahkan file atau direktori.
+- **`rm`**: Menghapus file atau direktori.
+- **`sudo`**: Memberikan hak akses root untuk menjalankan perintah.
+- **`apt`**: Manajer paket untuk menginstal, menghapus, dan memperbarui perangkat lunak.
+
 ### Software Manager
 
 - **Menggunakan GNOME Software**:
@@ -678,6 +693,33 @@ Setelah menginstal Ubuntu, Anda perlu melakukan beberapa tugas pengaturan awal d
 - Tentukan jumlah RAM yang ingin Anda alokasikan ke mesin virtual.
 - Pilih hard disk untuk mesin virtual, Anda dapat membuat hard disk virtual baru atau menggunakan hard disk yang sudah ada.
 
+1. **Pilih hard disk untuk mesin virtual Anda**:
+   - **Buat hard disk virtual baru**:
+     - Pilih "Create a virtual hard disk now".
+     - Klik "Create".
+   - **Pilih jenis file hard disk**:
+     - Pilih "VDI (VirtualBox Disk Image)" dan klik "Next".
+   - **Pilih jenis penyimpanan di hard disk fisik**:
+     - Pilih antara "Dynamically allocated" atau "Fixed size" (dynamically allocated akan memperluas ukuran hard disk sesuai kebutuhan, sedangkan fixed size akan mengalokasikan ukuran penuh segera).
+     - Klik "Next".
+   - **Tentukan ukuran hard disk**:
+     - Pilih ukuran untuk hard disk virtual Anda. Direkomendasikan minimal 25 GB.
+     - Klik "Create".
+
+2. **Konfigurasi tambahan (opsional)**:
+   - Setelah mesin virtual dibuat, Anda dapat mengkonfigurasi pengaturan tambahan dengan memilih mesin virtual dan mengklik "Settings".
+   - Beberapa pengaturan penting termasuk:
+     - **System**: Atur alokasi RAM, jumlah CPU, dan urutan boot.
+     - **Display**: Atur memori video dan akselerasi grafis.
+     - **Storage**: Pastikan file ISO Ubuntu ditambahkan sebagai optical drive di controller IDE atau SATA.
+     - **Network**: Pilih jenis jaringan (NAT, Bridged, Host-only, dll.).
+
+3. **Mulai mesin virtual**:
+   - Pilih mesin virtual baru Anda dari daftar dan klik "Start".
+   - Pilih file ISO Ubuntu yang sudah Anda unduh sebelumnya sebagai sumber instalasi jika diminta.
+   - Ikuti panduan instalasi Ubuntu seperti biasanya.
+
+
 #### **Pilih Gambar Ubuntu**
 
 - Pada jendela pengaturan mesin virtual, pilih "Settings" > "Storage".
@@ -711,39 +753,166 @@ Setelah menginstal Ubuntu, Anda perlu melakukan beberapa tugas pengaturan awal d
 - Pilih "Use an existing disk" dan klik "Browse".
 - Pilih file ISO Ubuntu yang Anda unduh sebelumnya.
 
+## Instalasi pada Mesin Virtual (VMware Workstation) (Lanjutan)
+
 #### **Mulai Mesin Virtual**
 
 - Setelah pengaturan selesai, klik tombol "Power On This Virtual Machine" untuk memulai mesin virtual Ubuntu.
 
----
+### Instalasi pada Raspberry Pi
 
-## Dual Booting dengan Windows
+#### **Unduh Gambar Raspberry Pi OS**
 
-### Buat Partisi Terpisah untuk Ubuntu
+- Kunjungi situs web resmi Raspberry Pi ([https://www.raspberrypi.org/software/](https://www.raspberrypi.org/software/)).
+- Unduh gambar Raspberry Pi OS terbaru yang kompatibel dengan model Raspberry Pi Anda.
 
-#### **Gunakan Windows Disk Management**
+#### **Buat Image SD Card**
 
-- Buka Disk Management di Windows.
-- Kurangi ukuran partisi Windows untuk membuat ruang kosong untuk Ubuntu.
+- Gunakan alat seperti Etcher atau Rufus untuk membuat image SD card dari file gambar Raspberry Pi OS yang diunduh.
+- Pastikan SD card yang Anda gunakan memiliki kapasitas yang cukup untuk gambar Raspberry Pi OS.
 
-### Instal Ubuntu
+#### **Boot Raspberry Pi**
 
-#### **Ikuti Panduan Instalasi**
+- Masukkan SD card ke slot SD card di Raspberry Pi.
+- Hubungkan keyboard, mouse, dan monitor ke Raspberry Pi.
+- Hubungkan Raspberry Pi ke sumber daya (adapter daya).
+- Raspberry Pi akan boot dan Anda akan melihat layar desktop Raspberry Pi OS.
 
-- Boot dari USB drive Ubuntu.
-- Pilih "Install Ubuntu alongside Windows" saat memilih jenis instalasi.
-- Atur partisi sesuai keinginan.
+##  Penggunaan Ubuntu
 
-### Pilihan Boot
+### Terminal dan Command Line
 
-#### **Konfigurasi GRUB**
+- **Dasar-dasar Terminal**:
+  - Buka terminal dengan menekan `Ctrl+Alt+T`.
+  - Gunakan perintah dasar seperti `ls`, `cd`, `cp`, `mv`, `rm` untuk navigasi dan manipulasi file.
 
-- GRUB (bootloader Ubuntu) akan mendeteksi instalasi Windows dan menambahkannya ke menu boot.
-- Saat booting, Anda dapat memilih antara Ubuntu dan Windows.
+#### **Perintah Dasar Terminal**
 
----
+- **`ls`**: Menampilkan daftar file dan direktori.
+- **`cd`**: Mengubah direktori.
+- **`mkdir`**: Membuat direktori baru.
+- **`cp`**: Menyalin file.
+- **`mv`**: Memindahkan file atau direktori.
+- **`rm`**: Menghapus file atau direktori.
+- **`sudo`**: Memberikan hak akses root untuk menjalankan perintah.
+- **`apt`**: Manajer paket untuk menginstal, menghapus, dan memperbarui perangkat lunak.
 
-## Instalasi Ubuntu Server
+### Software Manager
+
+- **Menggunakan GNOME Software**:
+  - Buka "Ubuntu Software" dari menu aplikasi.
+  - Telusuri, instal, dan perbarui aplikasi dengan mudah.
+
+### Apt-get Package Manager
+
+- **Dasar-dasar Apt-get**:
+  - Perbarui daftar paket:
+    ```bash
+    sudo apt update
+    ```
+  - Tingkatkan semua paket terinstal:
+    ```bash
+    sudo apt upgrade
+    ```
+  - Instal paket baru:
+    ```bash
+    sudo apt install package_name
+    ```
+
+### Integrasi Git
+
+#### **Kloning Repositori**
+
+##### **Gunakan Git Clone**
+
+- Instal Git jika belum terinstal:
+    ```bash
+    sudo apt install git
+    ```
+- Klon repositori:
+    ```bash
+    git clone repository_url
+    ```
+
+#### **Membuat Perubahan dan Kontribusi**
+
+##### **Buat Cabang Baru**
+
+- Buat cabang baru untuk perubahan Anda:
+    ```bash
+    git checkout -b branch_name
+    ```
+
+##### **Commit Perubahan**
+
+- Commit perubahan Anda:
+    ```bash
+    git add .
+    git commit -m "Pesan commit"
+    ```
+
+#### **Melacak Perubahan dan Pembaruan**
+
+##### **Pull Perubahan Terbaru**
+
+- Tarik perubahan terbaru dari cabang utama:
+    ```bash
+    git pull origin main
+    ```
+
+##### **Push Perubahan**
+
+- Dorong perubahan Anda ke repositori:
+    ```bash
+    git push origin branch_name
+    ```
+
+### Upgrade Ubuntu
+
+#### **Langkah-langkah Upgrade**
+
+##### **Perbarui Daftar Paket**
+
+- Perbarui daftar paket yang tersedia:
+    ```bash
+    sudo apt update
+    ```
+
+##### **Tingkatkan Semua Paket**
+
+- Tingkatkan semua paket yang terinstal ke versi terbaru:
+    ```bash
+    sudo apt upgrade
+    ```
+
+##### **Mulai Ulang Sistem**
+
+- Setelah upgrade selesai, mulai ulang sistem Anda.
+
+#### **Solusi untuk Masalah Upgrade**
+
+##### **Bersihkan Cache Paket**
+
+- Jika upgrade gagal, bersihkan cache paket:
+    ```bash
+    sudo apt clean
+    ```
+
+##### **Gunakan Mode Recovery**
+
+- Jika upgrade masih gagal, gunakan mode recovery untuk memperbaiki masalah:
+    - Nyalakan kembali komputer dan tekan tombol yang sesuai untuk masuk ke mode recovery (biasanya F2, F8, atau Esc).
+    - Pilih opsi untuk memperbaiki sistem.
+
+###### **Langkah-langkah Memasuki Mode Recovery**
+
+1. Nyalakan kembali komputer Anda.
+2. Tekan tombol yang sesuai selama proses booting untuk mengakses menu boot. Tombol ini bisa bervariasi tergantung pada motherboard Anda, tetapi tombol umum adalah F2, F8, Esc, atau Del.
+3. Pilih opsi untuk masuk ke mode "Recovery Mode" atau "Advanced Options".
+4. Pilih opsi untuk memperbaiki sistem atau menjalankan mode pemulihan.
+5. Ikuti petunjuk di layar untuk memperbaiki masalah yang terjadi selama proses upgrade.
+
+##  Instalasi Ubuntu Server
 
 ### Unduh Ubuntu Server ISO
 
@@ -769,105 +938,78 @@ Setelah menginstal Ubuntu, Anda perlu melakukan beberapa tugas pengaturan awal d
 
 - Ikuti petunjuk pada layar untuk mengkonfigurasi pengaturan server, termasuk pengaturan jaringan, pengguna, dan paket tambahan yang diperlukan.
 
----
+#### **Contoh Konfigurasi Server**
 
-## Integrasi Git
+##### **Server Web dengan Apache**
 
-### Kloning Repositori
+1. **Instal Apache:**
+   ```bash
+   sudo apt install apache2
+   ```
+2. **Konfigurasi Apache:**
+   - Edit file konfigurasi Apache:
+     ```bash
+     sudo nano /etc/apache2/sites-available/000-default.conf
+     ```
+   - Ubah pengaturan sesuai kebutuhan.
+3. **Mulai Apache:**
+   ```bash
+   sudo systemctl restart apache2
+   ```
 
-#### **Gunakan Git Clone**
+##### **Server Database dengan MySQL**
 
-- Instal Git jika belum terinstal:
-    ```bash
-    sudo apt install git
-    ```
-- Klon repositori:
-    ```bash
-    git clone repository_url
-    ```
+1. **Instal MySQL:**
+   ```bash
+   sudo apt install mysql-server
+   ```
+2. **Konfigurasi MySQL:**
+   - Jalankan perintah berikut untuk masuk ke shell MySQL:
+     ```bash
+     mysql -u root -p
+     ```
+   - Masukkan kata sandi yang Anda buat selama instalasi.
+   - Buat database baru:
+     ```sql
+     CREATE DATABASE database_name;
+     ```
+   - Buat pengguna baru dan berikan hak akses ke database:
+     ```sql
+     CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
+     GRANT ALL PRIVILEGES ON database_name.* TO 'username'@'localhost';
+     FLUSH PRIVILEGES;
+     ```
 
-### Membuat Perubahan dan Kontribusi
+##### **Server Email dengan Postfix**
 
-#### **Buat Cabang Baru**
+1. **Instal Postfix:**
+   ```bash
+   sudo apt install postfix
+   ```
+2. **Konfigurasi Postfix:**
+   - Pilih opsi "Internet Site" selama instalasi Postfix.
+   - Masukkan nama domain atau alamat email Anda.
+3. **Konfigurasi Server Email:**
+   - Edit file konfigurasi Postfix untuk menyesuaikan pengaturan server email Anda.
 
-- Buat cabang baru untuk perubahan Anda:
-    ```bash
-    git checkout -b branch_name
-    ```
+###  Instalasi pada Platform Lain
 
-#### **Commit Perubahan**
+#### **Instalasi pada Mesin Virtual**
 
-- Commit perubahan Anda:
-    ```bash
-    git add .
-    git commit -m "Pesan commit"
-    ```
+##### **Instalasi dengan VirtualBox**
 
-### Melacak Perubahan dan Pembaruan
-
-#### **Pull Perubahan Terbaru**
-
-- Tarik perubahan terbaru dari cabang utama:
-    ```bash
-    git pull origin main
-    ```
-
-#### **Push Perubahan**
-
-- Dorong perubahan Anda ke repositori:
-    ```bash
-    git push origin branch_name
-    ```
-
----
-
-## Upgrade Ubuntu
-
-### Langkah-langkah Upgrade
-
-#### **Perbarui Daftar Paket**
-
-- Perbarui daftar paket yang tersedia:
-    ```bash
-    sudo apt update
-    ```
-
-#### **Tingkatkan Semua Paket**
-
-- Tingkatkan semua paket yang terinstal ke versi terbaru:
-    ```bash
-    sudo apt upgrade
-    ```
-
-#### **Mulai Ulang Sistem**
-
-- Setelah upgrade selesai, mulai ulang sistem Anda.
-
-### Solusi untuk Masalah Upgrade
-
-#### **Bersihkan Cache Paket**
-
-- Jika upgrade gagal, bersihkan cache paket:
-    ```bash
-    sudo apt clean
-    ```
-
-#### **Gunakan Mode Recovery**
-
-- Jika upgrade masih gagal, gunakan mode recovery untuk memperbaiki masalah:
-    - Nyalakan kembali komputer dan tekan tombol yang sesuai untuk masuk ke mode recovery (biasanya F2, F8, atau Esc).
-    - Pilih opsi untuk memperbaiki sistem.
-
----
-
-## Instalasi pada Mesin Virtual
-
-### Instalasi dengan VirtualBox
-
-#### **Unduh dan Instal VirtualBox**
+###### **Unduh dan Instal VirtualBox**
 
 - Kunjungi situs web VirtualBox ([https://www.virtualbox.org/](https://www.virtualbox.org/)) dan unduh versi yang sesuai untuk sistem operasi Anda.
 - Jalankan file instalasi dan ikuti petunjuk di layar.
+
+###### **Buat Mesin Virtual Baru**
+
+- Buka VirtualBox dan klik tombol "New".
+- Berikan nama untuk mesin virtual Anda.
+- Pilih jenis sistem operasi yang ingin Anda jalankan (dalam kasus ini, Ubuntu).
+- Tentukan jumlah RAM yang ingin Anda alokasikan ke mesin virtual.
+- Pilih hard disk untuk mesin virtual, Anda dapat membuat hard disk virtual baru atau menggunakan hard disk yang sudah ada.
 
 1. **Pilih hard disk untuk mesin virtual Anda**:
    - **Buat hard disk virtual baru**:
@@ -895,67 +1037,23 @@ Setelah menginstal Ubuntu, Anda perlu melakukan beberapa tugas pengaturan awal d
    - Pilih file ISO Ubuntu yang sudah Anda unduh sebelumnya sebagai sumber instalasi jika diminta.
    - Ikuti panduan instalasi Ubuntu seperti biasanya.
 
-
-##  Instalasi pada Raspberry Pi
-
-### Unduh Gambar Raspberry Pi OS
-
-- Kunjungi situs web resmi Raspberry Pi ([https://www.raspberrypi.org/software/](https://www.raspberrypi.org/software/)).
-- Unduh gambar Raspberry Pi OS terbaru yang kompatibel dengan model Raspberry Pi Anda.
-
-### Buat Image SD Card
-
-- Gunakan alat seperti Etcher atau Rufus untuk membuat image SD card dari file gambar Raspberry Pi OS yang diunduh.
-- Pastikan SD card yang Anda gunakan memiliki kapasitas yang cukup untuk gambar Raspberry Pi OS.
-
-### Boot Raspberry Pi
-
-- Masukkan SD card ke slot SD card di Raspberry Pi.
-- Hubungkan keyboard, mouse, dan monitor ke Raspberry Pi.
-- Hubungkan Raspberry Pi ke sumber daya (adapter daya).
-- Raspberry Pi akan boot dan Anda akan melihat layar desktop Raspberry Pi OS.
-
-### Instalasi pada Mesin Virtual (VirtualBox)
-
-#### **Unduh dan Instal VirtualBox**
-
-- Kunjungi situs web VirtualBox ([https://www.virtualbox.org/](https://www.virtualbox.org/)) dan unduh versi yang sesuai untuk sistem operasi Anda.
-- Jalankan file instalasi dan ikuti petunjuk di layar.
-
-#### **Buat Mesin Virtual Baru**
-
-- Buka VirtualBox dan klik tombol "New".
-- Berikan nama untuk mesin virtual Anda.
-- Pilih jenis sistem operasi yang ingin Anda jalankan (dalam kasus ini, Ubuntu).
-- Tentukan jumlah RAM yang ingin Anda alokasikan ke mesin virtual.
-- Pilih hard disk untuk mesin virtual, Anda dapat membuat hard disk virtual baru atau menggunakan hard disk yang sudah ada.
-
-#### **Pilih Gambar Ubuntu**
+###### **Pilih Gambar Ubuntu**
 
 - Pada jendela pengaturan mesin virtual, pilih "Settings" > "Storage".
 - Klik ikon "Empty" dan pilih "Choose existing disk".
 - Pilih file ISO Ubuntu yang Anda unduh sebelumnya.
 
-#### **Mulai Mesin Virtual**
+###### **Mulai Mesin Virtual**
 
 - Setelah pengaturan selesai, klik tombol "Start" untuk memulai mesin virtual Ubuntu.
 
-#### **Konfigurasi Tambahan (opsional)**:
+##### **Instalasi dengan VMware Workstation**
 
-- Setelah mesin virtual dibuat, Anda dapat mengkonfigurasi pengaturan tambahan dengan memilih mesin virtual dan mengklik "Settings".
-- Beberapa pengaturan penting termasuk:
-  - **System**: Atur alokasi RAM, jumlah CPU, dan urutan boot.
-  - **Display**: Atur memori video dan akselerasi grafis.
-  - **Storage**: Pastikan file ISO Ubuntu ditambahkan sebagai optical drive di controller IDE atau SATA.
-  - **Network**: Pilih jenis jaringan (NAT, Bridged, Host-only, dll.).
-
-### Instalasi pada Mesin Virtual (VMware Workstation)
-
-#### **Unduh dan Instal VMware Workstation**
+###### **Unduh dan Instal VMware Workstation**
 
 - Unduh dan instal VMware Workstation dari [https://www.vmware.com/products/workstation/workstation-pro.html](https://www.vmware.com/products/workstation/workstation-pro.html).
 
-#### **Buat Mesin Virtual Baru**
+###### **Buat Mesin Virtual Baru**
 
 - Buka VMware Workstation dan klik tombol "Create a New Virtual Machine".
 - Pilih "Custom (advanced)" dan klik "Next".
@@ -967,12 +1065,49 @@ Setelah menginstal Ubuntu, Anda perlu melakukan beberapa tugas pengaturan awal d
 - Pilih "Store virtual disk as a single file" dan klik "Next".
 - Konfigurasikan ukuran hard disk dan klik "Finish".
 
-#### **Pilih Gambar Ubuntu**
+###### **Pilih Gambar Ubuntu**
 
 - Pada jendela pengaturan mesin virtual, pilih "Settings" > "Hardware" > "Hard Disk".
 - Pilih "Use an existing disk" dan klik "Browse".
 - Pilih file ISO Ubuntu yang Anda unduh sebelumnya.
 
-#### **Mulai Mesin Virtual**
+###### **Mulai Mesin Virtual**
 
 - Setelah pengaturan selesai, klik tombol "Power On This Virtual Machine" untuk memulai mesin virtual Ubuntu.
+
+#### **Instalasi pada Raspberry Pi**
+
+##### **Unduh Gambar Raspberry Pi OS**
+
+- Kunjungi situs web resmi Raspberry Pi ([https://www.raspberrypi.org/software/](https://www.raspberrypi.org/software/)).
+- Unduh gambar Raspberry Pi OS terbaru yang kompatibel dengan model Raspberry Pi Anda.
+
+##### **Buat Image SD Card**
+
+- Gunakan alat seperti Etcher atau Rufus untuk membuat image SD card dari file gambar Raspberry Pi OS yang diunduh.
+- Pastikan SD card yang Anda gunakan memiliki kapasitas yang cukup untuk gambar Raspberry Pi OS.
+
+##### **Boot Raspberry Pi**
+
+- Masukkan SD card ke slot SD card di Raspberry Pi.
+- Hubungkan keyboard, mouse, dan monitor ke Raspberry Pi.
+- Hubungkan Raspberry Pi ke sumber daya (adapter daya).
+- Raspberry Pi akan boot dan Anda akan melihat layar desktop Raspberry Pi OS.
+
+##  Sumber Daya dan Dukungan
+
+### Komunitas Ubuntu
+
+- **Forum Ubuntu**:
+  - [Ubuntu Forums](https://ubuntuforums.org/): Forum resmi komunitas Ubuntu.
+  - [Ask Ubuntu](https://askubuntu.com/): Situs tanya jawab untuk pengguna Ubuntu.
+
+### Mendapatkan Bantuan dan Dukungan
+
+- **Dokumentasi Resmi**:
+  - [Ubuntu Documentation](https://help.ubuntu.com/): Dokumentasi resmi Ubuntu.
+  
+- **Bantuan Online**:
+  - Bergabung dengan komunitas Ubuntu di platform sosial seperti Reddit, Discord, dan Telegram.
+
+---
