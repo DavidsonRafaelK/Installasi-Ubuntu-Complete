@@ -95,6 +95,10 @@
             * [**Buat Mesin Virtual Baru**](#buat-mesin-virtual-baru)
             * [**Pilih Gambar Ubuntu**](#pilih-gambar-ubuntu)
             * [**Mulai Mesin Virtual**](#mulai-mesin-virtual)
+            * [**Ikuti Panduan Instalasi**](#ikuti-panduan-instalasi)
+            * [**Tips untuk Instalasi dengan VMware Workstation**](#tips-untuk-instalasi-dengan-vmware-workstation)
+            * [**Setelah Instalasi**](#setelah-instalasi)
+            * [**Kesimpulan**](#kesimpulan)
     * [**Instalasi pada Raspberry Pi**](#instalasi-pada-raspberry-pi)
         * [**Unduh Gambar Raspberry Pi OS**](#unduh-gambar-raspberry-pi-os)
         * [**Buat Image SD Card**](#buat-image-sd-card)
@@ -124,14 +128,13 @@
         * [**Mulai Ulang Sistem**](#mulai-ulang-sistem)
     * [**Solusi untuk Masalah Upgrade**](#solusi-untuk-masalah-upgrade)
         * [**Bersihkan Cache Paket**](#bersihkan-cache-paket)
-        * **[Gunakan Mode Recovery](#gunakan-mode-recovery)
-            * **Langkah-langkah Memasuki Mode Recovery**](#langkah-langkah-memasuki-mode-recovery)
+        * [**Gunakan Mode Recovery**](#gunakan-mode-recovery)
+            * [**Langkah-langkah Memasuki Mode Recovery**](#langkah-langkah-memasuki-mode-recovery)
 
 ##  Sumber Daya dan Dukungan
 
 * [**Komunitas Ubuntu**](#komunitas-ubuntu)
 * [**Mendapatkan Bantuan dan Dukungan**](#mendapatkan-bantuan-dan-dukungan)
-
 
 ---
 
